@@ -1,18 +1,18 @@
 # Checks and installs packages
 include("PackageInstaller.jl")
 ensure_packages(
+	"DSP",
 	"WAV",
 	"Plots",
 	"Random",
 	"LinearAlgebra",
-	"SignalAnalysis",
 )
 
+using DSP
 using WAV
 using Plots
 using Random
 using LinearAlgebra
-using SignalAnalysis
 
 function preprocess_audio(file_path::String, sr = 48000)
 	aud, fs = wavread(file_path)
